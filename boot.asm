@@ -12,7 +12,7 @@ start:
 
 
 
-bpbName                 db "PopcornB"
+TIMES 0x0b - $ + start db 0
 
 ;***********BIOS Partition Table***********;
 ; This 
@@ -32,12 +32,12 @@ bsDriveNumber: 	        db 0
 bsUnused: 	            db 0
 bsExtBootSignature: 	db 0x29
 bsSerialNumber:	        dd 0xa0a1a2a3
-bsVolumeLabel: 	        db "MOS FLOPPY "
+bsVolumeLabel: 	        db "POPCORNBOOT"
 bsFileSystem: 	        db "FAT12   "
 ;******************************************;
 
 
-msg:                    db "Executing Stage 1...", 0
+msg:                    db "Boot sector:  Executing Stage 1...", 0
 
 
 ;Print routine
@@ -67,3 +67,10 @@ times 510 - ($-$$) db 0 ; Pad boot sector with 0's
 
 dw 0xaa55               ; Boot signature / bootable "magic number"
                         ; 0x55 and 0xAA. Note little-endian ordering.
+                        
+                        
+                        
+                        
+                        
+                        
+
