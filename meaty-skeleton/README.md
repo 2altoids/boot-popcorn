@@ -9,6 +9,9 @@ gitlab.com/sortie/meaty-skeleton.
 `./iso.sh` to build kernel image.
 `./qemu.sh` to run kernel image in qemu.
 
+If you want to run just the kernel binary then: `qemu-system-i386 -kernel 
+./isodir/boot/myos.kernel`.
+
 ## Disclaimer
 Building the code in this tutorial does require an i686-elf cross-compiler, which can be built by following
 the GCC Cross-Compiler tutorial at wiki.osdev.org/GCC_Cross-Compiler. The location of the cross-compiler
