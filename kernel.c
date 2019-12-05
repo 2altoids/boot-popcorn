@@ -18,7 +18,7 @@ const int VGA_ROWS = 25;
 
 int term_col = 0;
 int term_row = 0;
-uint8_t term_color = 0x4E; // set text background to black and foreground to yellow
+uint8_t term_color = 0xCE; // set text background to black and foreground to yellow
 
 // Print a character to the terminal.
 void term_putc(char c) {
