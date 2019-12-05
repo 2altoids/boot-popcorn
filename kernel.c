@@ -56,13 +56,20 @@ void term_print(const char* str) {
 void kernel_main() {
     term_row++; // skip the row printed out by the boot sector
     term_row++; // skip the row printed out by the second-stage bootloader
-    term_print(" _ __   ___  _ __   ___ ___  _ __ _ __  \n");
-    term_print("| '_ \\ / _ \\| '_ \\ / __/ _ \\| '__| '_ \\ \n");
-    term_print("| |_) | (_) | |_) | (_| (_) | |  | | | |\n");
-    term_print("| .__/ \\___/| .__/ \\___\\___/|_|  |_| |_|\n");
-    term_print("| |         | |                         \n");
-    term_print("|_|         |_|                         \n");
-    // term_print("**********************************\n");
-    // term_print("* Welcome to the Popcorn kernel! *\n");
-    // term_print("**********************************\n");
+    //term_print(" _ __   ___  _ __   ___ ___  _ __ _ __  \n");
+    //term_print("| '_ \\ / _ \\| '_ \\ / __/ _ \\| '__| '_ \\ \n");
+    //term_print("| |_) | (_) | |_) | (_| (_) | |  | | | |\n");
+    //term_print("| .__/ \\___/| .__/ \\___\\___/|_|  |_| |_|\n");
+    //term_print("| |         | |                         \n");
+    //term_print("|_|         |_|                         \n");
+    term_print("**********************************\n");
+    term_print("* Welcome to the Popcorn kernel! *\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
+    term_print("**********************************\n");
 }
