@@ -126,7 +126,7 @@ hello: db "Hello more than 512 bytes world!!", 0
 kernel:
     ; Print hello message
 	mov esi, hello
-	mov ebx, 0xb8044 ; 0xb8000 + 0x00044 => leave some room for the message from the boot sector
+	mov ebx, 0xb8046 ; 0xb8000 + 0x00044 => leave some room for the message from the boot sector
 .loop:
     ; Print each character of message until 0 is reached
 	lodsb
