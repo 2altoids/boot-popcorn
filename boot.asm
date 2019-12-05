@@ -121,7 +121,7 @@ dw 0xaa55               ; Boot signature / bootable "magic number"
 copy_target:
 bits 32
 
-msgtwo: db "Boot Sector: Executing Stage 2...", 0
+msgtwo: db "Second Stage: Executing Stage 2...", 0
 
 kernel:
     ; Print 2nd stage message
