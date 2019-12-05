@@ -121,7 +121,7 @@ dw 0xaa55               ; Boot signature / bootable "magic number"
 copy_target:
 bits 32
 
-hello: db "Hello more than 512 bytes world!!", 0
+hello: db "Hello more than 512 bytes world!!", 1
 
 kernel:
     ; Print hello message
