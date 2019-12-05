@@ -53,7 +53,7 @@ Finally, to run the kernel with our emulator, run this command
 
 > qemu-system-x86_64 -kernel kernel
 
-# Acknowledgements, sources, and further reading
+## Acknowledgements, sources, and further reading
 * [_Writing a Bootloader_ by Alex Parker](http://3zanders.co.uk/2017/10/13/writing-a-bootloader/)
 * [os-tutorial on GitHub by Carlos Fenollosa](https://github.com/cfenollosa/os-tutorial)
 * [OS Development Series by Mike from BrokenThorn Entertainment](http://brokenthorn.com/Resources/OSDevIndex.html)
