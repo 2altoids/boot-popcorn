@@ -1,7 +1,9 @@
 # boot-popcorn
-Operating Systems project
+The **Popcorn Bootloader & Kernel**, or boot-popcorn for short, is an Operating Systems class project, comprised of a simple bootloader and a minimal 32-bit kernel, written for x86 family processors.
 
-# Requirements
+Boot-popcorn was created as a proof-of-concept to show what it takes to get a PC to boot, from pressing the power button to running arbitrary compiled code.
+
+## Requirements
 Building and running this project requires the assembler `nasm`, the emulator `qemu`, and a cross-compiler build of `gcc` specially configured for OS dev.  The former two may be available in your package manager already.  It is possible to use Windows, but it is much easier to use a Linux environment.
 
 `nasm` can be downloaded from the [Netwide Assembler website](https://nasm.us/).
@@ -19,13 +21,15 @@ To build, first run NASM to form the assembly code into an object suitable for l
 
 This will create an object file named `boot.o`.  Afterwards, use your `gcc` cross-compiler (whatever it may be called) to compile the C code and link it to `boot.o`:
 
-> i686-elf-gcc -m32 kmain.cpp boot.o -o kernel.bin -nostdlib -ffreestanding -std=c++11 -mno-red-zone -fno-exceptions -nostdlib -fno-rtti -Wall -Wextra -Werror -T linker.ldhttps://ftp.gnu.org/gnu/gcc/
+> i686-elf-gcc -m32 kmain.cpp boot.o -o kernel.bin -nostdlib -ffreestanding -std=c++11 -mno-red-zone -fno-exceptions -nostdlib -fno-rtti -Wall -Wextra -Werror -T linker.ld
 
 
 ## Run instructions
 Running the binary requires QEMU.  On your system you may be able to use either the command `qemu` or `qemu-system-x86_64`.
 
-To boot from the binary, run `qemu-system-x86_64 -fda kernel.bin`
+To boot from the binary, run QEMU:
+
+> qemu-system-x86_64 -fda kernel.bin
 
 ---
 
@@ -49,7 +53,7 @@ Finally, to run the kernel with our emulator, run this command
 
 > qemu-system-x86_64 -kernel kernel
 
-# Acknowledgements, sources, and further reading
+## Acknowledgements, sources, and further reading
 * [_Writing a Bootloader_ by Alex Parker](http://3zanders.co.uk/2017/10/13/writing-a-bootloader/)
 * [os-tutorial on GitHub by Carlos Fenollosa](https://github.com/cfenollosa/os-tutorial)
 * [OS Development Series by Mike from BrokenThorn Entertainment](http://brokenthorn.com/Resources/OSDevIndex.html)
