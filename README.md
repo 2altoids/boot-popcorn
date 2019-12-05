@@ -19,10 +19,15 @@ To build, first run NASM to form the assembly code into an object suitable for l
 
 > nasm -f elf32 boot.asm -o boot.o
 
-This will create an object file named `boot.o`.  Afterwards, use your `gcc` cross-compiler (whatever it may be called) to compile the C code and link it to `boot.o`:
+This will create an object file named `boot.o`.  Afterwards, use your `gcc` cross-compiler 
+(whatever it may be called) to compile the C++ code and link it to `boot.o`:
 
-> i686-elf-gcc -m32 kmain.cpp boot.o -o kernel.bin -nostdlib -ffreestanding -std=c++11 -mno-red-zone -fno-exceptions -nostdlib -fno-rtti -Wall -Wextra -Werror -T linker.ld
+> i686-elf-gcc -m32 kmain.cpp boot.o -o kernel.bin -nostdlib -ffreestanding -std=c++11 -mno-red-zone -fno-exceptions -fno-rtti -Wall -Wextra -Werror -T linker.ld
 
+And to compile the C version:
+
+> i686-elf-gcc -m32 kernel.c boot.o -o kernel.bin -nostdlib -ffreestanding -std=gnu11 
+-mno-red-zone -fno-exceptions -Wall -Wextra -Werror -T linker.ld
 
 ## Run instructions
 Running the binary requires QEMU.  On your system you may be able to use either the command `qemu` or `qemu-system-x86_64`.

@@ -1,4 +1,4 @@
-extern "C" void kmain()
+extern "C" void kernel_main()
 {
     const short color = 0x0F00;
     const char* hello = "Hello cpp world!";
