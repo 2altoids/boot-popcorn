@@ -54,6 +54,7 @@ void term_print(const char* str) {
 }
 
 void kernel_main() {
+    term_row++; // skip the row printed out by the boot sector
     term_row++; // skip the row printed out by the second-stage bootloader
     term_print("**********************************\n");
     term_print("* Welcome to the Popcorn kernel! *\n");
