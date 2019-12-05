@@ -139,8 +139,8 @@ kernel:
 halt:
     ; Set up stack for kernel, then call kernel main function
     mov esp, kernel_stack_top
-	extern kmain
-	call kmain
+	extern kernel_main
+	call kernel_main
     
     ; Kernel ends, halt
 	cli
