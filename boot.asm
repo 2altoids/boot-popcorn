@@ -126,7 +126,7 @@ hello: db "Hello more than 512 bytes world!!", 0
 kernel:
     ; Print hello message
 	mov esi, hello
-	mov ebx, 0xb80c0 ; Start printing at second row of vga so msg from boot sector isn't overwritten
+	mov ebx, 0xb80a0 ; Start printing at second row of vga so msg from boot sector isn't overwritten
 .loop:
     ; Print each character of message until 0 is reached
 	lodsb
