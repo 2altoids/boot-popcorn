@@ -52,6 +52,6 @@ void term_print(const char* str) {
 }
 
 void kernel_main() {
-    term_print("Hello, World!\n");
-    term_print("Welcome to the kernel.\n");
+    term_row++;
+    term_print("Welcome to the kernel!\n");
 }
