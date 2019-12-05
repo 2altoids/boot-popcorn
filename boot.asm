@@ -41,7 +41,7 @@ DATA_SEG equ gdt_data - gdt_start
 
 
 ; Boot sector data
-msg:                db "Boot sector:  Executing Stage 1...", 13, 10, 0
+msg:                db "Boot sector: Executing Stage 1...", 13, 10, 0
 disk_error_msg:     db "Disk read error", 0
 sectors_error_msg:  db "Incorrect number of sectors read", 0
 disk:               db 0x00 ; 0 is the code for first floppy drive
@@ -121,12 +121,12 @@ dw 0xaa55               ; Boot signature / bootable "magic number"
 copy_target:
 bits 32
 
-hello: db "Hello more than 512 bytes world!!", 1
+hello: db "Hello more than 512 bytes world!!", 0
 
 kernel:
     ; Print hello message
 	mov esi, hello
-	mov ebx, 0xb8000
+	mov ebx, 0xb8044 ; 0xb8000 + 0x00044 => leave some room for the message from the boot sector
 .loop:
     ; Print each character of message until 0 is reached
 	lodsb
