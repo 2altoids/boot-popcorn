@@ -21,7 +21,7 @@ To build, first run NASM to form the assembly code into an object suitable for l
 
 This will create an object file named `boot.o`.  Afterwards, use your `gcc` cross-compiler (whatever it may be called) to compile the C code and link it to `boot.o`:
 
-> i686-elf-gcc -m32 kmain.cpp boot.o -o kernel.bin -nostdlib -ffreestanding -std=c++11 -mno-red-zone -fno-exceptions -nostdlib -fno-rtti -Wall -Wextra -Werror -T linker.ldhttps://ftp.gnu.org/gnu/gcc/
+> i686-elf-gcc -m32 kmain.cpp boot.o -o kernel.bin -nostdlib -ffreestanding -std=c++11 -mno-red-zone -fno-exceptions -nostdlib -fno-rtti -Wall -Wextra -Werror -T linker.ld
 
 
 ## Run instructions
