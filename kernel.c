@@ -1,5 +1,5 @@
 /**
- * This code was found at wiki.osdev.org/User:Zesterer/Bare_Bones.
+ * This code was modified from the code found at https://wiki.osdev.org/User:Zesterer/Bare_Bones.
  * Compile with: i686-elf-gcc -std=gnu99 -ffreestanding -g -c kernel.c -o kernel.o
  */
 
@@ -18,7 +18,7 @@ const int VGA_ROWS = 25;
 
 int term_col = 0;
 int term_row = 0;
-uint8_t term_color = 0x0F;
+uint8_t term_color = 0x0E;
 
 void term_putc(char c) {
     switch (c) {
