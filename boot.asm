@@ -2,10 +2,11 @@
 ; POPCORN BOOTLOADER ;
 ;********************;
 
-org 0x7c00              ; The BIOS loads the boot sector at 0x7c00
+section .boot
 
 bits 16                 ; The bootloader begins in 16 bit real mode
 
+global start            ; start label as entrypoint in linker script
 
 start:
     jmp main
@@ -86,7 +87,7 @@ main:
     ;Load next stage into RAM         
     mov [disk],dl       
     mov ah, 0x2         ;read sectors
-    mov al, 1           ;number of sectors to read
+    mov al, 6           ;number of sectors to read
     mov ch, 0           ;cylinder idx
     mov dh, 0           ;head idx
     mov cl, 2           ;sector idx
@@ -132,7 +133,14 @@ kernel:
 	add ebx,2
 	jmp .loop
 halt:
+    mov esp,kernel_stack_top
+	extern kmain
+	call kmain
 	cli
 	hlt
 
-times 1024 - ($-$$) db 0
+section .bss
+align 4
+kernel_stack_bottom: equ $
+    resb 16384 ; 16 KB
+kernel_stack_top:
