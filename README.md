@@ -1,7 +1,9 @@
 # boot-popcorn
-Operating Systems project
+The **Popcorn Bootloader & Kernel**, or boot-popcorn for short, is an Operating Systems class project, comprised of a simple bootloader and a minimal 32-bit kernel, written for x86 family processors.
 
-# Requirements
+Boot-popcorn was created as a proof-of-concept to show what it takes to get a PC to boot, from pressing the power button to running arbitrary compiled code.
+
+## Requirements
 Building and running this project requires the assembler `nasm`, the emulator `qemu`, and a cross-compiler build of `gcc` specially configured for OS dev.  The former two may be available in your package manager already.  It is possible to use Windows, but it is much easier to use a Linux environment.
 
 `nasm` can be downloaded from the [Netwide Assembler website](https://nasm.us/).
@@ -25,7 +27,9 @@ This will create an object file named `boot.o`.  Afterwards, use your `gcc` cros
 ## Run instructions
 Running the binary requires QEMU.  On your system you may be able to use either the command `qemu` or `qemu-system-x86_64`.
 
-To boot from the binary, run `qemu-system-x86_64 -fda kernel.bin`
+To boot from the binary, run QEMU:
+
+> qemu-system-x86_64 -fda kernel.bin
 
 ---
 
