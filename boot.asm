@@ -88,7 +88,7 @@ main:
     ;Load next stage into RAM         
     mov [disk],dl       
     mov ah, 0x2         ;read sectors
-    mov al, 15          ;number of sectors to read
+    mov al, 16          ;number of sectors to read
     mov ch, 0           ;cylinder index
     mov dh, 0           ;head index
     mov cl, 2           ;sector index
