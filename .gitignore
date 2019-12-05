@@ -52,4 +52,4 @@ dkms.conf
 
 
 # No binaries from assembly
-*.bin
+
