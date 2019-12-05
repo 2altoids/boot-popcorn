@@ -18,8 +18,9 @@ const int VGA_ROWS = 25;
 
 int term_col = 0;
 int term_row = 0;
-uint8_t term_color = 0x0E;
+uint8_t term_color = 0x0E; // set text background to black and foreground to yellow
 
+// Print a character to the terminal.
 void term_putc(char c) {
     switch (c) {
         case '\n': {
@@ -45,6 +46,7 @@ void term_putc(char c) {
     }
 }
 
+// Print a string to the terminal.
 void term_print(const char* str) {
     for (size_t i = 0; str[i] != '\0'; i++) {
         term_putc(str[i]);
@@ -52,6 +54,8 @@ void term_print(const char* str) {
 }
 
 void kernel_main() {
-    term_row++;
-    term_print("Welcome to the kernel!\n");
+    term_row++; // skip the row printed out by the second-stage bootloader
+    term_print("**********************************\n");
+    term_print("* Welcome to the Popcorn kernel! *\n");
+    term_print("**********************************\n");
 }
