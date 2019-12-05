@@ -121,11 +121,11 @@ dw 0xaa55               ; Boot signature / bootable "magic number"
 copy_target:
 bits 32
 
-hello: db "Hello more than 512 bytes world!!", 0
+msgtwo: db "Boot Sector: Executing Stage 2...", 0
 
 kernel:
-    ; Print hello message
-	mov esi, hello
+    ; Print 2nd stage message
+	mov esi, msgtwo
 	mov ebx, 0xb80a0 ; Start printing at second row of vga so msg from boot sector isn't overwritten
 .loop:
     ; Print each character of message until 0 is reached
