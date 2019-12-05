@@ -59,7 +59,6 @@ void kernel_main() {
     term_print("**********************************      \n");
     term_print("* Welcome to the Popcorn kernel! *      \n");
     term_print("**********************************      \n");
-    term_print("\t\t\t\t\t\t\t\t  \n");
     term_print(" _ __   ___  _ __   ___ ___  _ __ _ __  \n");
     term_print("| '_ \\ / _ \\| '_ \\ / __/ _ \\| '__| '_ \\ \n");
     term_print("| |_) | (_) | |_) | (_| (_) | |  | | | |\n");
